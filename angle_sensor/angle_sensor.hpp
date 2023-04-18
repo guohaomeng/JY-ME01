@@ -88,12 +88,12 @@ void ANGLE_SENSOR::send_string(char *rec_data, const char *str_command)
   memset(rec_data, '\0', 20);
   // 从串口读取返回的数据，读取20个字符
   int i = 0;
-  vTaskDelay(1 / portTICK_PERIOD_MS); //等待一下传感器回应
+  delay(1); //等待一下传感器回应
   while (com_port->available())
   {
     if (i >= 20)
     {
-      printf("rec_data overflow!\n");
+      Serial.println("rec_data overflow!");
       break;
     }
     int ch = com_port->read();
@@ -121,12 +121,12 @@ bool ANGLE_SENSOR::send_hex(uint8_t *rec_hex, uint8_t *hex_command) // 数组名
   memset(rec_hex, '\0', 8);
   // 从串口读取返回的数据，读取20个字符
   int i = 0;
-  vTaskDelay(1 / portTICK_PERIOD_MS); //等待一下传感器回应
+  delay(1); //等待一下传感器回应
   while (com_port->available())
   {
     if (i >= 20)
     {
-      printf("rec_data overflow!\n");
+      Serial.println("rec_data overflow!");
       break;
     }
     int ch = com_port->read();
@@ -210,7 +210,7 @@ float ANGLE_SENSOR::ascii_getAngle(uint8_t modbus_id)
   memset(rec_str_main, '\0', 20);
   send_string(rec_str_main, "AT+PRATE=0");
   angle = atof(rec_str_main + 10);
-  printf("a:%.3f\n", angle);
+  // printf("a:%.3f\n", angle);
   return angle;
 }
 

@@ -23,6 +23,6 @@ void loop()
 {
   // 读取一次角度传感器的值
   float angle = angle_sensor.modbus_getAngle(0x00); // ESP32下运行一次大概2077us
-  Serial.printf("%.3f\n",angle);
+  Serial.println("a:" + Sring(angle, 4));
   delay(100);
 }

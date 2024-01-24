@@ -1,9 +1,9 @@
 # JY-ME01
 
-维特智能JY-ME01角度传感器Arduino库
+VitaSmart JY-ME01 Angle Sensor Arduino Library
 
-封装了一个函数，能实现通过串口MODBUS通信获取角度传感器的当前角度值。
+The library encapsulates a function that can be used to obtain the current angle value of the angle sensor via serial MODBUS communication.
 
-当然，务必先打开与角度传感器相接的串口，选对波特率，再执行初始化程序
+Of course, it is necessary to open the serial port connected to the angle sensor, select the right baud rate, and then execute the initialisation procedure.
 
-使用方法可参考例程"modbus_test.cpp"
+Please refer to the routine "modbus_test.cpp" for more information.
